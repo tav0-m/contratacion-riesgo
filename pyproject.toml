@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "riesgo-contratos"
+version = "0.1.0"
+description = "Priorización de riesgo en contratación pública (SECOP II, Colombia)"
+requires-python = ">=3.11"
+dependencies = [
+    "polars>=1.0",
+    "requests>=2.31",
+    "pydantic-settings>=2.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
